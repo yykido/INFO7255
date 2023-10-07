@@ -8,7 +8,7 @@ public class LinkedPlanService implements Serializable {
 
     private String _org;
     private String objectId;
-    private String getObjectType;
+    private String objectType;
 
     public LinkedService getLinkedService() {
         return linkedService;
@@ -42,11 +42,11 @@ public class LinkedPlanService implements Serializable {
         this.objectId = objectId;
     }
 
-    public String getGetObjectType() {
-        return getObjectType;
+    public String getObjectType() {
+        return objectType;
     }
 
-    public void setGetObjectType(String getObjectType) {
-        this.getObjectType = getObjectType;
+    public void setObjectType(String objectType) {
+        this.objectType = objectType;
     }
 }
