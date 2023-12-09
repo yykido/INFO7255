@@ -1,19 +1,54 @@
 package com.example.demoone.object;
 
+import lombok.Getter;
+import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.*;
 
-public class Plan implements Serializable {
+@Getter
+@Setter
+public class Plan{
+    @Valid
+    @NotNull
     private PlanCostShares planCostShares;
+    @Valid
+    @NotNull
     private List<LinkedPlanService> linkedPlanServices;
     private String _org;
+    @NotEmpty
     private String objectId;
+    @NotNull
     private String objectType;
+    @NotNull
     private String planType;
+    @NotNull
     private String creationDate;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Plan plan = (Plan) o;
+        return Objects.equals(planCostShares, plan.planCostShares) &&
+                Objects.equals(linkedPlanServices, plan.linkedPlanServices) &&
+                Objects.equals(_org, plan._org) &&
+                Objects.equals(objectId, plan.objectId) &&
+                Objects.equals(objectType, plan.objectType) &&
+                Objects.equals(planType, plan.planType) &&
+                Objects.equals(creationDate, plan.creationDate);
+    }
 
-//    private Plan plan;
+    @Override
+    public int hashCode() {
+        return Objects.hash(planCostShares, linkedPlanServices, _org, objectId, objectType, planType, creationDate);
+    }
+
+    //    private Plan plan;
 //
 //    public Plan getPlan() {
 //        return plan;
@@ -23,61 +58,61 @@ public class Plan implements Serializable {
 //        this.plan = plan;
 //    }
 
-    public PlanCostShares getPlanCostShares() {
-        return planCostShares;
-    }
-
-    public void setPlanCostShares(PlanCostShares planCostShares) {
-        this.planCostShares = planCostShares;
-    }
-
-    public List<LinkedPlanService> getLinkedPlanServices() {
-        return linkedPlanServices;
-    }
-
-    public void setLinkedPlanServices(List<LinkedPlanService> linkedPlanServices) {
-        this.linkedPlanServices = linkedPlanServices;
-    }
-
-    public String get_org() {
-        return _org;
-    }
-
-    public void set_org(String _org) {
-        this._org = _org;
-    }
-
-    public String getObjectId() {
-        return objectId;
-    }
-
-    public void setObjectId(String objectId) {
-        this.objectId = objectId;
-    }
-
-    public String getObjectType() {
-        return objectType;
-    }
-
-    public void setObjectType(String objectType) {
-        this.objectType = objectType;
-    }
-
-    public String getPlanType() {
-        return planType;
-    }
-
-    public void setPlanType(String planType) {
-        this.planType = planType;
-    }
-
-    public String getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(String creationDate) {
-        this.creationDate = creationDate;
-    }
+//    public PlanCostShares getPlanCostShares() {
+//        return planCostShares;
+//    }
+//
+//    public void setPlanCostShares(PlanCostShares planCostShares) {
+//        this.planCostShares = planCostShares;
+//    }
+//
+//    public List<LinkedPlanService> getLinkedPlanServices() {
+//        return linkedPlanServices;
+//    }
+//
+//    public void setLinkedPlanServices(List<LinkedPlanService> linkedPlanServices) {
+//        this.linkedPlanServices = linkedPlanServices;
+//    }
+//
+//    public String get_org() {
+//        return _org;
+//    }
+//
+//    public void set_org(String _org) {
+//        this._org = _org;
+//    }
+//
+//    public String getObjectId() {
+//        return objectId;
+//    }
+//
+//    public void setObjectId(String objectId) {
+//        this.objectId = objectId;
+//    }
+//
+//    public String getObjectType() {
+//        return objectType;
+//    }
+//
+//    public void setObjectType(String objectType) {
+//        this.objectType = objectType;
+//    }
+//
+//    public String getPlanType() {
+//        return planType;
+//    }
+//
+//    public void setPlanType(String planType) {
+//        this.planType = planType;
+//    }
+//
+//    public String getCreationDate() {
+//        return creationDate;
+//    }
+//
+//    public void setCreationDate(String creationDate) {
+//        this.creationDate = creationDate;
+//    }
 
     //------------------------------------------------------------------------------------
     //    private String _org;

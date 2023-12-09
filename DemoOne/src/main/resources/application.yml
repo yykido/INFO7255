@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 19535438879-6605llfqa8h0pu8l2oplo0gna8mnf7ag.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid,email,profile
+      resourceserver:
+        jwt:
+          issuer-uri: https://accounts.google.com
+          jwk-set-uri: https://www.googleapis.com/oauth2/v3/certs
+
+  jackson:
+    date-format: yymm-MM-dd HH:mm:ss
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
